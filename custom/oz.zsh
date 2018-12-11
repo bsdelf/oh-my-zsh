@@ -80,10 +80,13 @@ function scp-files-to-dir() {
 alias curl-json='curl -H "Content-Type:application/json"'
 
 #===============================
-# ssh 
+# ssh-keygen-xxx  -C comment -f file
 #===============================
 function ssh-keygen-rsa() {
-    ssh-keygen -t rsa -b 4096 -C "$1"
+    ssh-keygen -t rsa -b 4096 $@
+}
+function ssh-keygen-ed() {
+    ssh-keygen -t ed25519 $@
 }
 
 #===============================
